@@ -44,8 +44,8 @@ define network::rule (
     'RedHat': {
       file { "rule-${interface}":
         ensure  => present,
-        owner   => root,
-        group   => root,
+        owner   => 'root',
+        group   => 'root',
         mode    => '0644',
         path    => "/etc/sysconfig/network-scripts/rule-${interface}",
         content => template('network/rule-RedHat.erb'),
@@ -55,8 +55,8 @@ define network::rule (
     'Suse': {
       file { "ifrule-${interface}":
         ensure  => present,
-        owner   => root,
-        group   => root,
+        owner   => 'root',
+        group   => 'root',
         mode    => '0644',
         path    => "/etc/sysconfig/network/ifrule-${interface}",
         content => template('network/rule-RedHat.erb'),
